@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Образовательное учреждение</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #ffe6f0; /* светло-розовый фон */
+        color: #660033; /* темно-розовый текст */
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background: #cc3366; /* насыщенный розовый */
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+      nav ul {
+        list-style: none;
+        padding: 0;
+      }
+      nav ul li {
+        display: inline;
+        margin: 0 15px;
+      }
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+      }
+      main {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background: #fff0f6; /* очень светлый розовый */
+        border-radius: 8px;
+        box-shadow: 0 3px 10px rgba(204, 51, 102, 0.3);
+      }
+      h1,
+      h2,
+      h3 {
+        color: #990050; /* темно-розовый оттенок */
+      }
+      p {
+        font-size: 1.2em;
+      }
+      .miro-board {
+        width: 100%;
+        max-width: 768px; /* Максимальная ширина */
+        height: 432px; /* Высота */
+        border: none; /* Убираем рамку */
+        margin: 20px 0; /* Отступы сверху и снизу */
+      }
+      .iframe-container {
+        display: flex;
+        justify-content: center; /* Центрируем iframe */
+      }
+      footer {
+        text-align: center;
+        padding: 10px;
+        background: #cc3366;
+        color: white;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Образовательное учреждение</h1>
+      <nav>
+        <ul>
+          <li><a href="dashboard.html">Личный кабинет</a></li>
+          <li><a href="registration.html">Онлайн-опросы</a></li>
+          <li><a href="chat.html">Домашние задания и ресурсы</a></li>
+          <li><a href="quiz.html">Тест</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Добро пожаловать на сайт образовательного учреждения!</h2>
+      <p>Выберите раздел из меню для доступа к интерактивным сервисам.</p>
+
+      <section>
+        <h3>Доступ к электронному журналу</h3>
+        <p>
+          Для доступа к электронному журналу, пожалуйста, перейдите по следующей
+          ссылке:
+          <a href="https://minschool16.eljur.ru/authorize" target="_blank"
+            >электронный журнал</a
+          >.
+        </p>
+        <p>
+          Если у вас нет учетной записи, пожалуйста, свяжитесь с администрацией
+          школы для получения информации о регистрации.
+        </p>
+      </section>
+
+      <section>
+        <h3>Доска Miro</h3>
+        <div class="iframe-container">
+          <iframe
+            class="miro-board"
+            src="https://miro.com/app/live-embed/uXjVLDYQJqI=/?moveToViewport=-2669,-1318,8722,4315&embedId=412622016537"
+            frameborder="0"
+            scrolling="no"
+            allow="fullscreen; clipboard-read; clipboard-write"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; МОБУ СОШ №16</p>
+    </footer>
+  </body>
+</html>

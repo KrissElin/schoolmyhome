@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Домашние задания и ресурсы</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #ffe6f0; /* светло-розовый фон */
+        color: #660033; /* темно-розовый текст */
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background: #cc3366; /* насыщенный розовый */
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+      nav ul {
+        list-style: none;
+        padding: 0;
+      }
+      nav ul li {
+        display: inline;
+        margin: 0 15px;
+      }
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+      }
+      main {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background: #fff0f6; /* очень светлый розовый */
+        border-radius: 8px;
+        box-shadow: 0 3px 10px rgba(204, 51, 102, 0.3);
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        color: #990050; /* темно-розовый оттенок */
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        margin: 10px 0;
+      }
+      button {
+        background-color: #cc3366;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1em;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      button:hover {
+        background-color: #990050;
+      }
+      footer {
+        text-align: center;
+        padding: 10px;
+        background: #cc3366;
+        color: white;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      }
+      .result-message {
+        margin-top: 15px;
+        font-weight: bold;
+        color: #990050;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Домашние задания и ресурсы</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="dashboard.html">Личный кабинет</a></li>
+          <li><a href="registration.html">Онлайн-опросы</a></li>
+          <li><a href="quiz.html">Тест</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="resources-section">
+        <h2>Домашние задания и ресурсы</h2>
+
+        <div id="student-section">
+          <h3>Раздел для Учеников</h3>
+          <h4>Домашние Задания</h4>
+          <ul id="assignments-list">
+            <li>Задание 1: <a href="ilovepdf_merged.pdf">Скачать</a></li>
+            <li>Задание 2: <a href="ilovepdf_merged(1).pdf">Скачать</a></li>
+          </ul>
+
+          <h4>Загрузка Выполненных Работ</h4>
+          <form id="submission-form">
+            <label for="student-work">Загрузить выполненное задание:</label>
+            <input type="file" id="student-work" name="student-work" required />
+            <br />
+            <button type="submit">Отправить</button>
+          </form>
+
+          <h4>Викторина по математике</h4>
+          <form id="quiz-form">
+            <div class="question">
+              <p>1. Какое число является квадратом 9?</p>
+              <label
+                ><input type="radio" name="q1" value="81" required /> 81</label
+              ><br />
+              <label><input type="radio" name="q1" value="72" /> 72</label
+              ><br />
+              <label><input type="radio" name="q1" value="90" /> 90</label
+              ><br />
+            </div>
+            <div class="question">
+              <p>2. Какое из следующих чисел является простым?</p>
+              <label
+                ><input type="radio" name="q2" value="4" required /> 4</label
+              ><br />
+              <label><input type="radio" name="q2" value="7" /> 7</label><br />
+              <label><input type="radio" name="q2" value="9" /> 9</label><br />
+            </div>
+            <div class="question">
+              <p>3. Какое значение имеет π (пи)?</p>
+              <label
+                ><input type="radio" name="q3" value="3.14" required />
+                3.14</label
+              ><br />
+              <label><input type="radio" name="q3" value="3.16" /> 3.16</label
+              ><br />
+              <label><input type="radio" name="q3" value="3.12" /> 3.12</label
+              ><br />
+            </div>
+            <button type="submit">Отправить ответы</button>
+          </form>
+          <div id="result" style="display: none">
+            <h2>Результаты викторины:</h2>
+            <p id="score"></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; МОБУ СОШ №16</p>
+    </footer>
+
+    <script>
+      // Обработка викторины
+      document
+        .getElementById("quiz-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          let score = 0;
+          const answers = {
+            q1: "81",
+            q2: "7",
+            q3: "3.14",
+          };
+
+          for (let question in answers) {
+            const selected = document.querySelector(
+              `input[name="${question}"]:checked`
+            );
+            if (selected && selected.value === answers[question]) {
+              score++;
+            }
+          }
+
+          document.getElementById(
+            "score"
+          ).innerText = `Вы набрали ${score} из 3 правильных ответов.`;
+          document.getElementById("result").style.display = "block";
+        });
+    </script>
+  </body>
+</html>

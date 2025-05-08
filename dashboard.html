@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #ffe6f0; /* светло-розовый фон */
+        color: #660033; /* темно-розовый текст */
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background: #cc3366; /* насыщенный розовый */
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+      nav ul {
+        list-style: none;
+        padding: 0;
+      }
+      nav ul li {
+        display: inline;
+        margin: 0 15px;
+      }
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+      }
+      main {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background: #fff0f6; /* очень светлый розовый */
+        border-radius: 8px;
+        box-shadow: 0 3px 10px rgba(204, 51, 102, 0.3);
+      }
+      h1,
+      h2 {
+        color: #990050; /* темно-розовый оттенок */
+      }
+      p {
+        font-size: 1.2em;
+      }
+      h3 {
+        margin-top: 30px;
+        color: #990050;
+      }
+      ul.assignments {
+        list-style-type: none;
+        padding-left: 0;
+      }
+      ul.assignments li {
+        margin: 8px 0;
+      }
+      ul.assignments li a {
+        color: #cc3366;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      ul.assignments li a:hover {
+        text-decoration: underline;
+      }
+      footer {
+        text-align: center;
+        padding: 10px;
+        background: #cc3366;
+        color: white;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Личный кабинет</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="registration.html">Онлайн-опросы</a></li>
+          <li><a href="chat.html">Домашние задания и ресурсы</a></li>
+          <li><a href="quiz.html">Тест</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Имя: Иван Иванов</h2>
+      <p>Оценки: <span id="grades">5, 4, 3</span></p>
+      <p>Расписание: <span id="schedule">Пн, Ср, Пт - 10:00</span></p>
+
+      <h3>Домашние задания</h3>
+      <ul class="assignments">
+        <li>
+          Задание 1:
+          <a href="ilovepdf_merged.pdf" target="_blank" rel="noopener"
+            >Скачать</a
+          >
+        </li>
+        <li>
+          Задание 2:
+          <a href="ilovepdf_merged(1).pdf" target="_blank" rel="noopener"
+            >Скачать</a
+          >
+        </li>
+      </ul>
+    </main>
+
+    <footer>
+      <p>&copy; МОБУ СОШ №16</p>
+    </footer>
+  </body>
+</html>

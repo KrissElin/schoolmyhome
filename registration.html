@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Онлайн-опросы</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        max-width: 700px;
+        margin: 20px auto;
+        padding: 10px 15px;
+        background: #ffe6f0; /* светло-розовый фон */
+        color: #660033; /* темно-розовый текст */
+      }
+      header {
+        background: #cc3366; /* насыщенный розовый */
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+      nav ul {
+        list-style: none;
+        padding: 0;
+      }
+      nav ul li {
+        display: inline;
+        margin: 0 15px;
+      }
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+      }
+      main {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background: #fff0f6; /* очень светлый розовый */
+        border-radius: 8px;
+        box-shadow: 0 3px 10px rgba(204, 51, 102, 0.3);
+      }
+      h1,
+      h2 {
+        color: #990050; /* темно-розовый оттенок */
+      }
+      fieldset {
+        border: none;
+        margin-bottom: 20px;
+        padding: 0;
+      }
+      legend {
+        font-weight: bold;
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        color: #990050;
+      }
+      label {
+        display: block;
+        margin-bottom: 6px;
+        cursor: pointer;
+        color: #660033;
+      }
+      input[type="radio"],
+      input[type="checkbox"] {
+        margin-right: 10px;
+        cursor: pointer;
+      }
+      textarea {
+        width: 100%;
+        min-height: 60px;
+        margin-top: 4px;
+        padding: 8px;
+        font-size: 1em;
+        border-radius: 4px;
+        border: 1px solid #cc3366;
+        resize: vertical;
+        color: #660033;
+        background: #fff0f6;
+      }
+      button {
+        background-color: #cc3366;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1em;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 100%;
+      }
+      button:hover {
+        background-color: #990050;
+      }
+      .result-message {
+        margin-top: 15px;
+        font-weight: bold;
+        color: #990050;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Онлайн-опросы</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="dashboard.html">Личный кабинет</a></li>
+          <li><a href="chat.html">Домашние задания и ресурсы</a></li>
+          <li><a href="quiz.html">Тест</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Онлайн-опросы и голосования</h2>
+
+      <section id="parentPollSection">
+        <h3>Опрос для родителей</h3>
+        <form id="parentPollForm">
+          <fieldset>
+            <legend>
+              Насколько Вы удовлетворены качеством школьного образования?
+            </legend>
+            <label
+              ><input
+                type="radio"
+                name="parent_satisfaction"
+                value="Отлично"
+                required
+              />
+              Отлично</label
+            >
+            <label
+              ><input type="radio" name="parent_satisfaction" value="Хорошо" />
+              Хорошо</label
+            >
+            <label
+              ><input
+                type="radio"
+                name="parent_satisfaction"
+                value="Удовлетворительно"
+              />
+              Удовлетворительно</label
+            >
+            <label
+              ><input type="radio" name="parent_satisfaction" value="Плохо" />
+              Плохо</label
+            >
+          </fieldset>
+          <fieldset>
+            <legend>
+              Какие дополнительные секции или кружки вы бы хотели видеть в
+              школе? (Выберите все подходящие)
+            </legend>
+            <label
+              ><input
+                type="checkbox"
+                name="parent_clubs"
+                value="Спортивные секции"
+              />
+              Спортивные секции</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                name="parent_clubs"
+                value="Творческие кружки"
+              />
+              Творческие кружки</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                name="parent_clubs"
+                value="Научные кружки"
+              />
+              Научные кружки</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                name="parent_clubs"
+                value="Дополнительное изучение иностранных языков"
+              />
+              Дополнительное изучение иностранных языков</label
+            >
+          </fieldset>
+          <button type="submit">Отправить ответы</button>
+          <div class="result-message" id="parentResult"></div>
+        </form>
+      </section>
+
+      <section id="studentPollSection">
+        <h3>Опрос для учеников</h3>
+        <form id="studentPollForm">
+          <fieldset>
+            <legend>Какие формы заданий вам нравятся больше всего?</legend>
+            <label
+              ><input
+                type="radio"
+                name="student_assignment_preference"
+                value="Проекты"
+                required
+              />
+              Проекты</label
+            >
+            <label
+              ><input
+                type="radio"
+                name="student_assignment_preference"
+                value="Тесты"
+              />
+              Тесты</label
+            >
+            <label
+              ><input
+                type="radio"
+                name="student_assignment_preference"
+                value="Практические работы"
+              />
+              Практические работы</label
+            >
+            <label
+              ><input
+                type="radio"
+                name="student_assignment_preference"
+                value="Устные ответы"
+              />
+              Устные ответы</label
+            >
+          </fieldset>
+          <fieldset>
+            <legend>Что бы вы хотели улучшить на школьном сайте?</legend>
+            <textarea
+              name="student_site_suggestions"
+              placeholder="Ваши предложения"
+            ></textarea>
+          </fieldset>
+          <button type="submit">Отправить ответы</button>
+          <div class="result-message" id="studentResult"></div>
+        </form>
+      </section>
+
+      <section id="teacherPollSection">
+        <h3>Опрос для учителей</h3>
+        <form id="teacherPollForm">
+          <fieldset>
+            <legend>
+              Какие инструменты на сайте наиболее полезны для вашей работы?
+            </legend>
+            <label
+              ><input
+                type="checkbox"
+                name="teacher_tools"
+                value="Электронный журнал"
+              />
+              Электронный журнал</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                name="teacher_tools"
+                value="Расписание уроков"
+              />
+              Расписание уроков</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                name="teacher_tools"
+                value="Обмен учебными материалами"
+              />
+              Обмен учебными материалами</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                name="teacher_tools"
+                value="Календарь событий"
+              />
+              Календарь событий</label
+            >
+          </fieldset>
+          <fieldset>
+            <legend>
+              Какие новые функции Вы хотели бы видеть в будущих версиях сайта?
+            </legend>
+            <textarea
+              name="teacher_feature_requests"
+              placeholder="Ваши пожелания"
+            ></textarea>
+          </fieldset>
+          <button type="submit">Отправить ответы</button>
+          <div class="result-message" id="teacherResult"></div>
+        </form>
+      </section>
+    </main>
+
+    <script>
+      function handleFormSubmit(formId, resultId) {
+        const form = document.getElementById(formId);
+        const resultDiv = document.getElementById(resultId);
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+          const formData = new FormData(form);
+          const answers = {};
+          for (const [key, value] of formData.entries()) {
+            if (answers[key]) {
+              if (Array.isArray(answers[key])) answers[key].push(value);
+              else answers[key] = [answers[key], value];
+            } else {
+              answers[key] = value;
+            }
+          }
+          resultDiv.textContent =
+            "Спасибо за участие в опросе! Ваши ответы приняты.";
+          form.reset();
+        });
+      }
+      handleFormSubmit("parentPollForm", "parentResult");
+      handleFormSubmit("studentPollForm", "studentResult");
+      handleFormSubmit("teacherPollForm", "teacherResult");
+    </script>
+  </body>
+</html>
