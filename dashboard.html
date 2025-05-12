@@ -3,83 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Личный кабинет</title>
+    <title>Мини-игры</title>
     <link rel="stylesheet" href="styles.css" />
-    <style>
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background: #ffe6f0; /* светло-розовый фон */
-        color: #660033; /* темно-розовый текст */
-        margin: 0;
-        padding: 0;
-      }
-      header {
-        background: #cc3366; /* насыщенный розовый */
-        color: white;
-        padding: 20px;
-        text-align: center;
-      }
-      nav ul {
-        list-style: none;
-        padding: 0;
-      }
-      nav ul li {
-        display: inline;
-        margin: 0 15px;
-      }
-      nav ul li a {
-        color: white;
-        text-decoration: none;
-      }
-      main {
-        max-width: 800px;
-        margin: 20px auto;
-        padding: 20px;
-        background: #fff0f6; /* очень светлый розовый */
-        border-radius: 8px;
-        box-shadow: 0 3px 10px rgba(204, 51, 102, 0.3);
-      }
-      h1,
-      h2 {
-        color: #990050; /* темно-розовый оттенок */
-      }
-      p {
-        font-size: 1.2em;
-      }
-      h3 {
-        margin-top: 30px;
-        color: #990050;
-      }
-      ul.assignments {
-        list-style-type: none;
-        padding-left: 0;
-      }
-      ul.assignments li {
-        margin: 8px 0;
-      }
-      ul.assignments li a {
-        color: #cc3366;
-        text-decoration: none;
-        font-weight: 600;
-      }
-      ul.assignments li a:hover {
-        text-decoration: underline;
-      }
-      footer {
-        text-align: center;
-        padding: 10px;
-        background: #cc3366;
-        color: white;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-        margin-top: 40px;
-      }
-    </style>
   </head>
   <body>
     <header>
-      <h1>Личный кабинет</h1>
+      <h1>Мини-игры</h1>
       <nav>
         <ul>
           <li><a href="index.html">Главная</a></li>
@@ -91,29 +20,126 @@
     </header>
 
     <main>
-      <h2>Имя: Иван Иванов</h2>
-      <p>Оценки: <span id="grades">5, 4, 3</span></p>
-      <p>Расписание: <span id="schedule">Пн, Ср, Пт - 10:00</span></p>
-
-      <h3>Домашние задания</h3>
-      <ul class="assignments">
-        <li>
-          Задание 1:
-          <a href="ilovepdf_merged.pdf" target="_blank" rel="noopener"
-            >Скачать</a
-          >
-        </li>
-        <li>
-          Задание 2:
-          <a href="ilovepdf_merged(1).pdf" target="_blank" rel="noopener"
-            >Скачать</a
-          >
-        </li>
-      </ul>
+      <div class="iframe-container">
+        <iframe
+          class="game-iframe"
+          src="https://learningapps.org/watch?app=6812987"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div class="iframe-container">
+        <iframe
+          class="game-iframe"
+          src="https://learningapps.org/watch?app=1344741"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div class="quiz">
+        <h3>Викторина</h3>
+        <div id="quiz-container"></div>
+        <button id="check-button" disabled>Проверить ответ</button>
+        <p id="result"></p>
+      </div>
     </main>
 
     <footer>
       <p>&copy; МОБУ СОШ №16</p>
     </footer>
+
+    <script>
+      // JavaScript код для викторины
+      const quizData = [
+        {
+          question:
+            "Какой язык программирования используется для веб-разработки?",
+          options: [" HTML", "Python", "JavaScript"],
+          correct: "JavaScript",
+        },
+        {
+          question: "В каком году был создан язык Python?",
+          options: ["1989", "1991", "2000"],
+          correct: "1991",
+        },
+        {
+          question: "Что из перечисленного является фреймворком JavaScript?",
+          options: ["Django", "React", "Laravel"],
+          correct: "React",
+        },
+        {
+          question:
+            "Как называется процесс тестирования программного обеспечения?",
+          options: ["Дебаг", "Валидация", "Тестирование"],
+          correct: "Тестирование",
+        },
+        {
+          question: "Что такое HTML?",
+          options: [
+            "Язык программирования",
+            "Язык разметки гипертекста",
+            "База данных",
+          ],
+          correct: "Язык разметки гипертекста",
+        },
+      ];
+
+      let currentQuestion = null;
+
+      function loadRandomQuestion() {
+        const container = document.getElementById("quiz-container");
+        const button = document.getElementById("check-button");
+        const result = document.getElementById("result");
+
+        result.textContent = "";
+        button.disabled = true;
+
+        const randomIndex = Math.floor(Math.random() * quizData.length);
+        currentQuestion = quizData[randomIndex];
+
+        let html = `<h4>${currentQuestion.question}</h4>`;
+        currentQuestion.options.forEach((option) => {
+          html += `
+          <label>
+            <input type="radio" name="quiz-option" value="${option}" />
+            ${option}
+          </label><br />
+        `;
+        });
+
+        container.innerHTML = html;
+
+        const inputs = container.querySelectorAll('input[name="quiz-option"]');
+        inputs.forEach((input) => {
+          input.addEventListener("change", () => {
+            button.disabled = false;
+            result.textContent = "";
+          });
+        });
+      }
+
+      function checkAnswer() {
+        const selected = document.querySelector(
+          'input[name="quiz-option"]:checked'
+        );
+        const result = document.getElementById("result");
+
+        if (!selected) {
+          result.textContent = "Пожалуйста, выберите ответ.";
+          return;
+        }
+
+        if (selected.value === currentQuestion.correct) {
+          result.textContent = "Правильно! 🎉";
+          result.style.color = "green";
+        } else {
+          result.textContent = "Неправильно. Попробуйте еще раз.";
+          result.style.color = "red";
+        }
+      }
+
+      document
+        .getElementById("check-button")
+        .addEventListener("click", checkAnswer);
+      window.addEventListener("load", loadRandomQuestion);
+    </script>
   </body>
 </html>
