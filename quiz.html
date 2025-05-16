@@ -1,385 +1,330 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Тест по информатике</title>
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-    body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: #ffe6f0; /* светло-розовый фон */
-      color: #660033; /* темно-розовый текст */
-      margin: 0;
-      padding: 15px;
-      height: 100vh; /* Занять всю высоту экрана */
-      display: flex;
-      flex-direction: column;
-    }
-    header {
-      background: #cc3366; /* насыщенный розовый */
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    h1 {
-      margin: 0;
-      color: #990050;
-    }
-    nav ul {
-      list-style: none;
-      padding: 0;
-    }
-    nav ul li {
-      display: inline;
-      margin: 0 15px;
-    }
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-    }
-    main {
-      flex: 1; /* Занять оставшееся пространство */
-      padding: 20px;
-      overflow-y: auto; /* Прокрутка, если контент превышает высоту */
-      background: #fff0f6; /* очень светлый розовый */
-      border-radius: 8px;
-      box-shadow: 0 3px 10px rgba(204, 51, 102, 0.3);
-    }
-    .task {
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-      padding: 15px 20px;
-      margin-bottom: 20px;
-    }
-    .task h2 {
-      font-size: 1.2em;
-      margin-bottom: 8px;
-      color: #990050; /* темно-розовый оттенок */
-    }
-    .task label {
-      display: block;
-      margin-bottom: 6px;
-      cursor: pointer;
-    }
-    button {
-      background-color: #cc3366;
-      color: white;
-      border: none;
-      padding: 10px 18px;
-      font-size: 1em;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.25s ease-in-out;
-      margin-top: 10px;
-    }
-    button:hover {
-      background-color: #990050;
-    }
-    #quiz-result {
-      margin-top: 20px;
-      font-weight: bold;
-      color: #990050;
-    }
-    footer {
-      text-align: center;
-      padding: 10px;
-      background: #cc3366;
-      color: white;
-      position: relative;
-      bottom: 0;
-      width: 100%;
-      margin-top: 40px;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Тест по информатике</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="dashboard.html">Мини-игры</a></li>
-        <li><a href="registration.html">Онлайн-опросы</a></li>
-        <li><a href="chat.html">Домашние задания и ресурсы</a></li>
-      </ul>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Тест по информатике</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #ffe6f0; /* светло-розовый фон */
+        color: #660033; /* темно-розовый текст */
+        margin: 0;
+        padding: 15px;
+        height: 100vh; /* Занять всю высоту экрана */
+        display: flex;
+        flex-direction: column;
+      }
+      header {
+        background: #cc3366; /* насыщенный розовый */
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+      h1 {
+        margin: 0;
+        color: #990050;
+      }
+      nav ul {
+        list-style: none;
+        padding: 0;
+      }
+      nav ul li {
+        display: inline;
+        margin: 0 15px;
+      }
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+      }
+      main {
+        flex: 1; /* Занять оставшееся пространство */
+        padding: 20px;
+        overflow-y: auto; /* Прокрутка, если контент превышает высоту */
+        background: #fff0f6; /* очень светлый розовый */
+        border-radius: 8px;
+        box-shadow: 0 3px 10px rgba(204, 51, 102, 0.3);
+      }
+      .task {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        padding: 15px 20px;
+        margin-bottom: 20px;
+      }
+      .task h2 {
+        font-size: 1.2em;
+        margin-bottom: 8px;
+        color: #990050; /* темно-розовый оттенок */
+      }
+      .task label {
+        display: block;
+        margin-bottom: 6px;
+        cursor: pointer;
+      }
+      button {
+        background-color: #cc3366;
+        color: white;
+        border: none;
+        padding: 10px 18px;
+        font-size: 1em;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.25s ease-in-out;
+        margin-top: 10px;
+      }
+      button:hover {
+        background-color: #990050;
+      }
+      #quiz-result {
+        margin-top: 20px;
+        font-weight: bold;
+        color: #990050;
+      }
+      footer {
+        text-align: center;
+        padding: 10px;
+        background: #cc3366;
+        color: white;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        margin-top: 40px;
+      }
+      .video-container {
+        margin-top: 20px;
+      }
+      .video-container h2 {
+        color: #990050;
+      }
+      .video-container iframe {
+        width: 100%;
+        height: 400px;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Тест по информатике</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="dashboard.html">Мини-игры</a></li>
+          <li><a href="registration.html">Онлайн-опросы</a></li>
+          <li><a href="chat.html">Домашние задания и ресурсы</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <main>
-    <h2>Ответьте на вопросы</h2>
-    <form id="quiz-form">
-      <!-- Вопросы -->
-      <div class="task" role="group" aria-labelledby="q1">
-        <h2 id="q1">
-          1. Какое из перечисленных устройств считается выходным устройством
-          компьютера?
-        </h2>
-        <label
-          ><input type="radio" name="q1" value="0" required />
-          Клавиатура</label
-        >
-        <label><input type="radio" name="q1" value="0" /> Жесткий диск</label>
-        <label><input type="radio" name="q1" value="1" /> Монитор</label>
-        <label
-          ><input type="radio" name="q1" value="0" /> Микропроцессор</label
-        >
-      </div>
+    <main>
+      <h2>Ответьте на вопросы</h2>
+      <form id="quiz-form">
+        <!-- Вопросы -->
+        <div class="task" role="group" aria-labelledby="q1">
+          <h2 id="q1">
+            1. Какое из перечисленных устройств считается выходным устройством
+            компьютера?
+          </h2>
+          <label
+            ><input type="radio" name="q1" value="0" required />
+            Клавиатура</label
+          >
+          <label><input type="radio" name="q1" value="0" /> Жесткий диск</label>
+          <label><input type="radio" name="q1" value="1" /> Монитор</label>
+          <label
+            ><input type="radio" name="q1" value="0" /> Микропроцессор</label
+          >
+        </div>
 
-      <div class="task" role="group" aria-labelledby="q2">
-        <h2 id="q2">2. Что такое алгоритм?</h2>
-        <label
-          ><input type="radio" name="q2" value="1" required />
-          Последовательность инструкций для решения задачи</label
-        >
-        <label
-          ><input type="radio" name="q2" value="0" /> Электронное
-          устройство</label
-        >
-        <label
-          ><input type="radio" name="q2" value="0" /> Способ подключения к
-          Интернету</label
-        >
-        <label
-          ><input type="radio" name="q2" value="0" /> Программа для обработки
-          изображений</label
-        >
-      </div>
+        <div class="task" role="group" aria-labelledby="q2">
+          <h2 id="q2">2. Что такое алгоритм?</h2>
+          <label
+            ><input type="radio" name="q2" value="1" required />
+            Последовательность инструкций для решения задачи</label
+          >
+          <label
+            ><input type="radio" name="q2" value="0" /> Электронное
+            устройство</label
+          >
+          <label
+            ><input type="radio" name="q2" value="0" /> Способ подключения к
+            Интернету</label
+          >
+          <label
+            ><input type="radio" name="q2" value="0" /> Программа для обработки
+            изображений</label
+          >
+        </div>
 
-      <div class="task" role="group" aria-labelledby="q3">
-        <h2 id="q3">3. Какой язык используется для создания веб-страниц?</h2>
-        <label
-          ><input type="radio" name="q3" value="0" required /> Python</label
-        >
-        <label><input type="radio" name="q3" value="1" /> HTML</label>
-        <label><input type="radio" name="q3" value="0" /> SQL</label>
-        <label><input type="radio" name="q3" value="0" /> C++</label>
-      </div>
+        <div class="task" role="group" aria-labelledby="q3">
+          <h2 id="q3">3. Какой язык используется для создания веб-страниц?</h2>
+          <label
+            ><input type="radio" name="q3" value="0" required /> Python</label
+          >
+          <label><input type="radio" name="q3" value="1" /> HTML</label>
+          <label><input type="radio" name="q3" value="0" /> SQL</label>
+          <label><input type="radio" name="q3" value="0" /> C++</label>
+        </div>
 
-      <div class="task" role="group" aria-labelledby="q4">
-        <h2 id="q4">4. Что такое "операционная система"?</h2>
-        <label
-          ><input type="radio" name="q4" value="1" required /> Программное
-          обеспечение, управляющее аппаратными ресурсами компьютера</label
-        >
-        <label
-          ><input type="radio" name="q4" value="0" /> Сетевая программа</label
-        >
-        <label
-          ><input type="radio" name="q4" value="0" /> Внешнее устройство
-          ввода</label
-        >
-        <label
-          ><input type="radio" name="q4" value="0" /> Язык программирования
-          высокого уровня</label
-        >
-      </div>
+        <div class="task" role="group" aria-labelledby="q4">
+          <h2 id="q4">4. Что такое "операционная система"?</h2>
+          <label
+            ><input type="radio" name="q4" value="1" required /> Программное
+            обеспечение, управляющее аппаратными ресурсами компьютера</label
+          >
+          <label
+            ><input type="radio" name="q4" value="0" /> Сетевая программа</label
+          >
+          <label
+            ><input type="radio" name="q4" value="0" /> Внешнее устройство
+            ввода</label
+          >
+          <label
+            ><input type="radio" name="q4" value="0" /> Язык программирования
+            высокого уровня</label
+          >
+        </div>
 
-      <div class="task" role="group" aria-labelledby="q5">
-        <h2 id="q5">5. Что такое байт?</h2>
-        <label
-          ><input type="radio" name="q5" value="0" required /> Электронное
-          устройство ввода</label
-        >
-        <label
-          ><input type="radio" name="q5" value="1" /> Единица измерения объема
-          информации, равная 8 битам</label
-        >
-        <label
-          ><input type="radio" name="q5" value="0" /> Сетевой протокол</label
-        >
-        <label
-          ><input type="radio" name="q5" value="0" /> Название компьютерной
-          игры</label
-        >
-      </div>
+        <div class="task" role="group" aria-labelledby="q5">
+          <h2 id="q5">5. Что такое байт?</h2>
+          <label
+            ><input type="radio" name="q5" value="0" required /> Электронное
+            устройство ввода</label
+          >
+          <label
+            ><input type="radio" name="q5" value="1" /> Единица измерения объема
+            информации, равная 8 битам</label
+          >
+          <label
+            ><input type="radio" name="q5" value="0" /> Сетевой протокол</label
+          >
+          <label
+            ><input type="radio" name="q5" value="0" /> Название компьютерной
+            игры</label
+          >
+        </div>
 
-      <div class="task" role="group" aria-labelledby="q6">
-        <h2 id="q6">6. Что такое IP-адрес?</h2>
-        <label
-          ><input type="radio" name="q6" value="1" required /> Уникальный
-          сетевой адрес устройства в интернете</label
-        >
-        <label
-          ><input type="radio" name="q6" value="0" /> Программное обеспечение
-          для защиты</label
-        >
-        <label
-          ><input type="radio" name="q6" value="0" /> Язык
-          программирования</label
-        >
-        <label
-          ><input type="radio" name="q6" value="0" /> Вид компьютерной
-          мыши</label
-        >
-      </div>
+        <div class="task" role="group" aria-labelledby="q6">
+          <h2 id="q6">6. Что такое IP-адрес?</h2>
+          <label
+            ><input type="radio" name="q6" value="1" required /> Уникальный
+            сетевой адрес устройства в интернете</label
+          >
+          <label
+            ><input type="radio" name="q6" value="0" /> Программное обеспечение
+            для защиты</label
+          >
+          <label
+            ><input type="radio" name="q6" value="0" /> Язык
+            программирования</label
+          >
+          <label
+            ><input type="radio" name="q6" value="0" /> Вид компьютерной
+            мыши</label
+          >
+        </div>
 
-      <div class="task" role="group" aria-labelledby="q7">
-        <h2 id="q7">
-          7. Какой протокол используется для передачи веб-страниц?
-        </h2>
-        <label><input type="radio" name="q7" value="0" required /> FTP</label>
-        <label><input type="radio" name="q7" value="1" /> HTTP</label <label><input type="radio" name="q7" value="0" /> SMTP</label>
-        <label><input type="radio" name="q7" value="0" /> SSH</label>
-      </div>
+        <div class="task" role="group" aria-labelledby="q7">
+          <h2 id="q7">
+            7. Какой протокол используется для передачи веб-страниц?
+          </h2>
+          <label><input type="radio" name="q7" value="0" required /> FTP</label>
+          <label><input type="radio" name="q7" value="1" /> HTTP</label>
+          <label><input type="radio" name="q7" value="0" /> SMTP</label>
+          <label><input type="radio" name="q7" value="0" /> SSH</label>
+        </div>
 
-      <div class="task" role="group" aria-labelledby="q8">
-        <h2 id="q8">8. Что такое браузер?</h2>
-        <label
-          ><input type="radio" name="q8" value="1" required /> Программа для
-          просмотра веб-страниц</label
-        >
-        <label
-          ><input type="radio" name="q8" value="0" /> Операционная
-          система</label
-        >
-        <label
-          ><input type="radio" name="q8" value="0" /> Язык
-          программирования</label
-        >
-        <label><input type="radio" name="q8" value="0" /> Вирусное ПО</label>
-      </div>
+        <div class="task" role="group" aria-labelledby="q8">
+          <h2 id="q8">8. Что такое браузер?</h2>
+          <label
+            ><input type="radio" name="q8" value="1" required /> Программа для
+            просмотра веб-страниц</label
+          >
+          <label
+            ><input type="radio" name="q8" value="0" /> Операционная
+            система</label
+          >
+          <label
+            ><input type="radio" name="q8" value="0" /> Язык
+            программирования</label
+          >
+          <label><input type="radio" name="q8" value="0" /> Вирусное ПО</label>
+        </div>
 
-      <div class="task" role="group" aria-labelledby="q9">
-        <h2 id="q9">9. Что такое HTML?</h2>
-        <label
-          ><input type="radio" name="q9" value="1" required /> Язык разметки
-          гипертекста</label
-        >
-        <label
-          ><input type="radio" name="q9" value="0" /> Язык
-          программирования</label
-        >
-        <label><input type="radio" name="q9" value="0" /> Веб-сервер</label>
-        <label><input type="radio" name="q9" value="0" /> Браузер</label>
-      </div>
+        <div class="task" role="group" aria-labelledby="q9">
+          <h2 id="q9">9. Что такое HTML?</h2>
+          <label
+            ><input type="radio" name="q9" value="1" required /> Язык разметки
+            гипертекста</label
+          >
+          <label
+            ><input type="radio" name="q9" value="0" /> Язык
+            программирования</label
+          >
+          <label><input type="radio" name="q9" value="0" /> Веб-сервер</label>
+          <label><input type="radio" name="q9" value="0" /> Браузер</label>
+        </div>
 
-      <div class="task" role="group" aria-labelledby="q10">
-        <h2 id="q10">10. Что такое вирус в компьютере?</h2>
-        <label
-          ><input type="radio" name="q10" value="1" required /> Вредоносная
-          программа, способная повредить систему</label
-        >
-        <label
-          ><input type="radio" name="q10" value="0" /> Аппаратное
-          устройство</label
-        >
-        <label
-          ><input type="radio" name="q10" value="0" /> Операционная
-          система</label
-        >
-        <label
-          ><input type="radio" name="q10" value="0" /> Программа для создания
-          сайтов</label
-        >
-      </div>
+        <div class="task" role="group" aria-labelledby="q10">
+          <h2 id="q10">10. Что такое вирус в компьютере?</h2>
+          <label
+            ><input type="radio" name="q10" value="1" required /> Вредоносная
+            программа, способная повредить систему</label
+          >
+          <label
+            ><input type="radio" name="q10" value="0" /> Аппаратное
+            устройство</label
+          >
+          <label
+            ><input type="radio" name="q10" value="0" /> Операционная
+            система</label
+          >
+          <label
+            ><input type="radio" name="q10" value="0" /> Программа для создания
+            сайтов</label
+          >
+        </div>
+        <button type="submit">Проверить ответы</button>
+      </form>
+      <div id="quiz-result"></div>
 
-      <div class="task" role="group" aria-labelledby="q11">
-        <h2 id="q11">11. Что такое облачные технологии?</h2>
-        <label
-          ><input type="radio" name="q11" value="1" required /> Хранение и
-          обработка данных на удаленных серверах</label
-        >
-        <label
-          ><input type="radio" name="q11" value="0" /> Локальное хранение
-          данных на компьютере</label
-        >
-        <label
-          ><input type="radio" name="q11" value="0" /> Программное обеспечение
-          для защиты данных</label
-        >
-        <label
-          ><input type="radio" name="q11" value="0" /> Устройство для ввода
-          информации</label
-        >
-      </div>
+      <div class="video-container"></div>
+    </main>
 
-      <div class="task" role="group" aria-labelledby="q12">
-        <h2 id="q12">
-          12. Какой из следующих языков является языком программирования?
-        </h2>
-        <label
-          ><input type="radio" name="q12" value="0" required /> HTML</label
-        >
-        <label><input type="radio" name="q12" value="1" /> JavaScript</label>
-        <label><input type="radio" name="q12" value="0" /> CSS</label>
-        <label><input type="radio" name="q12" value="0" /> XML</label>
-      </div>
+    <footer>
+      <p>&copy; МОБУ СОШ №16</p>
+    </footer>
 
-      <div class="task" role="group" aria-labelledby="q13">
-        <h2 id="q13">13. Что такое SQL?</h2>
-        <label
-          ><input type="radio" name="q13" value="1" required /> Язык для
-          работы с базами данных</label
-        >
-        <label
-          ><input type="radio" name="q13" value="0" /> Язык разметки</label
-        >
-        <label
-          ><input type="radio" name="q13" value="0" /> Программное обеспечение</label
-        >
-        <label
-          ><input type="radio" name="q13" value="0" /> Операционная
-          система</label
-        >
-      </div>
+    <script>
+      document
+        .getElementById("quiz-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          let total = 10;
+          let correct = 0;
+          const resultElement = document.getElementById("quiz-result");
+          resultElement.innerHTML = "";
 
-      <div class="task" role="group" aria-labelledby="q14">
-        <h2 id="q14">14. Что такое кибербезопасность?</h2>
-        <label
-          ><input type="radio" name="q14" value="1" required /> Защита
-          компьютеров и сетей от атак</label
-        >
-        <label
-          ><input type="radio" name="q14" value="0" /> Программное обеспечение
-          для создания сайтов</label
-        >
-        <label
-          ><input type="radio" name="q14" value="0" /> Устройство для хранения
-          данных</label
-        >
-        <label
-          ><input type="radio" name="q14" value="0" /> Язык
-          программирования</label
-        >
-      </div>
-
-      <button type="submit">Проверить ответы</button>
-    </form>
-    <div id="quiz-result"></div>
-  </main>
-
-  <footer>
-    <p>&copy; МОБУ СОШ №16</p>
-  </footer>
-
-  <script>
-    document
-      .getElementById("quiz-form")
-      .addEventListener("submit", function (event) {
-        event.preventDefault();
-        let total = 14;
-        let correct = 0;
-        const resultElement = document.getElementById("quiz-result");
-        resultElement.innerHTML = "";
-
-        for (let i = 1; i <= total; i++) {
-          const options = this["q" + i];
-          let selectedValue = null;
-          for (const option of options) {
-            if (option.checked) selectedValue = option.value;
+          for (let i = 1; i <= total; i++) {
+            const options = this["q" + i];
+            let selectedValue = null;
+            for (const option of options) {
+              if (option.checked) selectedValue = option.value;
+            }
+            if (selectedValue === "1") {
+              correct++;
+              resultElement.innerHTML += `<p>Вопрос ${i}: Верно!</ p>`;
+            } else {
+              resultElement.innerHTML += `<p>Вопрос ${i}: Неверно.</p>`;
+            }
           }
-          if (selectedValue === "1") {
-            correct++;
-            resultElement.innerHTML += `<p>Вопрос ${i}: Верно!</p>`;
-          } else {
-            resultElement.innerHTML += `<p>Вопрос ${i}: Неверно.</p>`;
-          }
-        }
 
-        resultElement.innerHTML += `<p>Вы ответили правильно на ${correct} из ${total} вопросов.</p>`;
-      });
-  </script>
-</body>
+          resultElement.innerHTML += `<p>Вы ответили правильно на ${correct} из ${total} вопросов.</p>`;
+        });
+    </script>
+  </body>
 </html>
