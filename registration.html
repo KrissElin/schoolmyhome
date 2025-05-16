@@ -300,7 +300,7 @@
     </main>
 
     <script>
-      function handleFormSubmit(formId, resultId) {
+      function handleFormSubmit(formId, resultId, apiEndpoint) {
         const form = document.getElementById(formId);
         const resultDiv = document.getElementById(resultId);
         form.addEventListener("submit", function (event) {
@@ -315,14 +315,42 @@
               answers[key] = value;
             }
           }
-          resultDiv.textContent =
-            "Спасибо за участие в опросе! Ваши ответы приняты.";
-          form.reset();
+
+          // Отправка данных на сервер
+          fetch(apiEndpoint, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(answers),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              resultDiv.textContent = data.message;
+              form.reset();
+            })
+            .catch((error) => {
+              console.error("Ошибка:", error);
+              resultDiv.textContent = "Произошла ошибка при отправке данных.";
+            });
         });
       }
-      handleFormSubmit("parentPollForm", "parentResult");
-      handleFormSubmit("studentPollForm", "studentResult");
-      handleFormSubmit("teacherPollForm", "teacherResult");
+
+      handleFormSubmit(
+        "parentPollForm",
+        "parentResult",
+        "http://localhost:3000/api/parent"
+      );
+      handleFormSubmit(
+        "studentPollForm",
+        "studentResult",
+        "http://localhost:3000/api/student"
+      );
+      handleFormSubmit(
+        "teacherPollForm",
+        "teacherResult",
+        "http://localhost:3000/api/teacher"
+      );
     </script>
   </body>
 </html>
