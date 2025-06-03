@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10 класс - Основы сетей и интернет</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #e0f7fa;
+        color: #006064;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background: #00838f;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+      nav ul {
+        list-style: none;
+        padding: 0;
+      }
+      nav ul li {
+        display: inline;
+        margin: 0 15px;
+      }
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+      }
+      main {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background: #b2ebf2;
+        border-radius: 8px;
+        box-shadow: 0 3px 10px rgba(0, 131, 143, 0.3);
+      }
+      h1,
+      h2,
+      h3 {
+        color: #004d40;
+        font-weight: bold;
+      }
+      p,
+      ul {
+        font-size: 1.2em;
+      }
+      .presentation {
+        width: 100%;
+        max-width: 800px;
+        background: transparent;
+        border-radius: 15px;
+        margin: auto;
+        margin-top: 20px;
+      }
+      .slide {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        padding: 40px 20px;
+        animation: fadeIn 0.6s ease forwards;
+      }
+      .slide.active {
+        display: flex;
+      }
+      .controls {
+        background: #ddd;
+        padding: 15px 30px;
+        text-align: center;
+        border-radius: 0 0 15px 15px;
+      }
+      button {
+        background-color: #00838f;
+        border: none;
+        border-radius: 30px;
+        padding: 12px 25px;
+        margin: 0 10px;
+        font-size: 1.1rem;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      button:hover {
+        background-color: #00695c;
+      }
+      .example-list {
+        background: #f0f0f0;
+        color: #000;
+        border-radius: 10px;
+        padding: 15px;
+        font-size: 1.1rem;
+        margin-top: 15px;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      footer {
+        text-align: center;
+        padding: 10px;
+        background: #00838f;
+        color: white;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Образовательное учреждение</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="chat.html">Домашние задания и ресурсы</a></li>
+          <li><a href="dashboard.html">Мини-игры</a></li>
+          <li><a href="registration.html">Онлайн-опросы</a></li>
+          <li><a href="quiz.html">Тест</a></li>
+          <li><a href="class.html">Классы</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2>10 класс: Основы сетей и интернет</h2>
+      <p>
+        В этом уроке мы изучим основы компьютерных сетей и работу интернета.
+      </p>
+
+      <div
+        class="presentation"
+        role="main"
+        aria-label="Презентация Основы сетей и интернет"
+      >
+        <section class="slide active" aria-hidden="false">
+          <h1>Что такое компьютерные сети?</h1>
+          <p>
+            Компьютерные сети — это системы, которые позволяют компьютерам
+            обмениваться данными.
+          </p>
+        </section>
+
+        <section class="slide" aria-hidden="true">
+          <h2>Типы сетей</h2>
+          <ul class="example-list">
+            <li>Локальные сети (LAN)</li>
+            <li>Глобальные сети (WAN)</li>
+            <li>Интернет</li>
+          </ul>
+        </section>
+
+        <section class="slide" aria-hidden="true">
+          <h2>Протоколы передачи данных</h2>
+          <p>
+            Протоколы — это правила, по которым происходит обмен данными в сети:
+          </p>
+          <ul class="example-list">
+            <li>TCP/IP — основной протокол интернета</li>
+            <li>HTTP — протокол для передачи веб-страниц</li>
+            <li>FTP — протокол для передачи файлов</li>
+          </ul>
+        </section>
+
+        <section class="slide" aria-hidden="true">
+          <h2>Безопасность в сети</h2>
+          <p>Важно соблюдать правила безопасности при работе в интернете:</p>
+          <ul class="example-list">
+            <li>Использовать антивирусное ПО</li>
+            <li>Не раскрывать личные данные</li>
+            <li>Проверять ссылки перед переходом</li>
+          </ul>
+        </section>
+
+        <section class="slide" aria-hidden="true">
+          <h2>Итоги</h2>
+          <ul>
+            <li>Компьютерные сети позволяют обмениваться данными</li>
+            <li>Знание протоколов важно для работы в интернете</li>
+            <li>Безопасность в сети — это приоритет</li>
+          </ul>
+          <p>Спасибо за внимание!</p>
+        </section>
+
+        <div
+          class="controls"
+          role="navigation"
+          aria-label="Управление презентацией"
+        >
+          <button id="prevBtn" aria-label="Предыдущий слайд">← Назад</button>
+          <button id="nextBtn" aria-label="Следующий слайд">Вперед →</button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; МОБУ СОШ №16</p>
+    </footer>
+
+    <script>
+      (function () {
+        const slides = document.querySelectorAll(".slide");
+        let current = 0;
+
+        function showSlide(index) {
+          if (index < 0) index = slides.length - 1;
+          if (index >= slides.length) index = 0;
+          slides.forEach((slide, i) => {
+            slide.classList.toggle("active", i === index);
+            slide.setAttribute("aria-hidden", i !== index);
+          });
+          current = index;
+        }
+
+        document.getElementById("prevBtn").addEventListener("click", () => {
+          showSlide(current - 1);
+        });
+
+        document.getElementById("nextBtn").addEventListener("click", () => {
+          showSlide(current + 1);
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "ArrowRight" || e.key === " ") {
+            e.preventDefault();
+            showSlide(current + 1);
+          } else if (e.key === "ArrowLeft") {
+            e.preventDefault();
+            showSlide(current - 1);
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

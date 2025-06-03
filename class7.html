@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>7 класс - Алгоритмы</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #f9f9f9;
+        color: #333;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background: #4caf50;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+      nav ul {
+        list-style: none;
+        padding: 0;
+      }
+      nav ul li {
+        display: inline;
+        margin: 0 15px;
+      }
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+      }
+      main {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      }
+      h1,
+      h2,
+      h3 {
+        color: #2e7d32;
+        font-weight: bold;
+      }
+      p,
+      ul {
+        font-size: 1.2em;
+      }
+      .presentation {
+        width: 100%;
+        max-width: 800px;
+        background: transparent;
+        border-radius: 15px;
+        margin: auto;
+        margin-top: 20px;
+      }
+      .slide {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        padding: 40px 20px;
+        animation: fadeIn 0.6s ease forwards;
+      }
+      .slide.active {
+        display: flex;
+      }
+      .controls {
+        background: #ddd;
+        padding: 15px 30px;
+        text-align: center;
+        border-radius: 0 0 15px 15px;
+      }
+      button {
+        background-color: #4caf50;
+        border: none;
+        border-radius: 30px;
+        padding: 12px 25px;
+        margin: 0 10px;
+        font-size: 1.1rem;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      button:hover {
+        background-color: #388e3c;
+      }
+      .example-list {
+        background: #f0f0f0;
+        color: #000;
+        border-radius: 10px;
+        padding: 15px;
+        font-size: 1.1rem;
+        margin-top: 15px;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      footer {
+        text-align: center;
+        padding: 10px;
+        background: #4caf50;
+        color: white;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Образовательное учреждение</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="chat.html">Домашние задания и ресурсы</a></li>
+          <li><a href="dashboard.html">Мини-игры</a></li>
+          <li><a href="registration.html">Онлайн-опросы</a></li>
+          <li><a href="quiz.html">Тест</a></li>
+          <li><a href="class.html">Классы</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2>7 класс: Алгоритмы</h2>
+      <p>В этом уроке мы углубимся в изучение алгоритмов и их применения.</p>
+
+      <div class="presentation" role="main" aria-label="Презентация Алгоритмы">
+        <section class="slide active" aria-hidden="false">
+          <h1>Типы алгоритмов</h1>
+          <p>Алгоритмы можно классифицировать по различным критериям:</p>
+          <ul class="example-list">
+            <li>По структуре: линейные, разветвляющиеся, циклические</li>
+            <li>По сложности: простые и сложные</li>
+            <li>
+              По области применения: математические, логические, поисковые
+            </li>
+          </ul>
+        </section>
+
+        <section class="slide" aria-hidden="true">
+          <h2>Линейные алгоритмы</h2>
+          <p>
+            Линейные алгоритмы выполняются последовательно, шаг за шагом, от
+            начала до конца.
+          </p>
+        </section>
+
+        <section class="slide" aria-hidden="true">
+          <h2>Разветвляющиеся алгоритмы</h2>
+          <p>
+            Разветвляющиеся алгоритмы принимают решения на основе условий и
+            могут выполнять разные действия в зависимости от результата.
+          </p>
+        </section>
+
+        <section class="slide" aria-hidden="true">
+          <h2>Циклические алгоритмы</h2>
+          <p>
+            Циклические алгоритмы повторяют определенные шаги несколько раз,
+            пока не будет выполнено условие завершения.
+          </p>
+        </section>
+
+        <section class="slide" aria-hidden="true">
+          <h2>Итоги</h2>
+          <ul>
+            <li>Алгоритмы — это основа программирования и решения задач</li>
+            <li>Различные типы алгоритмов помогают в разных ситуациях</li>
+            <li>Понимание алгоритмов улучшает навыки программирования</li>
+          </ul>
+          <p>Спасибо за внимание!</p>
+        </section>
+
+        <div
+          class="controls"
+          role="navigation"
+          aria-label="Управление презентацией"
+        >
+          <button id="prevBtn" aria-label="Предыдущий слайд">← Назад</button>
+          <button id="nextBtn" aria-label="Следующий слайд">Вперед →</button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; МОБУ СОШ №16</p>
+    </footer>
+
+    <script>
+      (function () {
+        const slides = document.querySelectorAll(".slide");
+        let current = 0;
+
+        function showSlide(index) {
+          if (index < 0) index = slides.length - 1;
+          if (index >= slides.length) index = 0;
+          slides.forEach((slide, i) => {
+            slide.classList.toggle("active", i === index);
+            slide.setAttribute("aria-hidden", i !== index);
+          });
+          current = index;
+        }
+
+        document.getElementById("prevBtn").addEventListener("click", () => {
+          showSlide(current - 1);
+        });
+
+        document.getElementById("nextBtn").addEventListener("click", () => {
+          showSlide(current + 1);
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "ArrowRight" || e.key === " ") {
+            e.preventDefault();
+            showSlide(current + 1);
+          } else if (e.key === "ArrowLeft") {
+            e.preventDefault();
+            showSlide(current - 1);
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
