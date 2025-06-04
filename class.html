@@ -6,6 +6,192 @@
     <link rel="icon" href="school.png" type="image/png" />
     <title>Классы - Образовательное учреждение</title>
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #ffe6f0;
+        color: #660033;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      header {
+        text-align: center;
+        background: #cc3366;
+        color: white;
+        padding: 20px;
+        width: 100%;
+      }
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 10px 0 20px 0;
+      }
+      nav ul li {
+        display: inline;
+        margin: 0 15px;
+      }
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+      }
+      main {
+        max-width: 800px;
+        margin: 20px;
+        padding: 20px;
+        background: #fff0f6;
+        border-radius: 8px;
+        box-shadow: 0 3px 10px rgba(204, 51, 102, 0.3);
+      }
+      h2 {
+        color: #990050;
+        margin-top: 0;
+      }
+      ul.class-list {
+        padding-left: 20px;
+        margin-bottom: 30px;
+      }
+      ul.class-list li {
+        margin-bottom: 8px;
+        font-weight: bold;
+        font-size: 1.1em;
+      }
+      nav.schedule-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 20px 0;
+        display: inline-flex;
+        border-radius: 25px;
+        background: #cc3366;
+        box-shadow: 0 0 8px rgba(204, 51, 102, 0.5);
+      }
+      nav.schedule-nav ul li {
+        margin: 0;
+      }
+      nav.schedule-nav ul li button {
+        background: transparent;
+        border: none;
+        color: white;
+        padding: 12px 25px;
+        font-size: 1.1em;
+        cursor: pointer;
+        border-radius: 25px;
+        transition: background-color 0.3s ease;
+        outline-offset: 4px;
+      }
+      nav.schedule-nav ul li button:hover,
+      nav.schedule-nav ul li button.active,
+      nav.schedule-nav ul li button:focus {
+        background: #990033;
+      }
+      .schedule-section {
+        display: none;
+      }
+      .schedule-section.active {
+        display: block;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+        font-size: 1.05em;
+      }
+      th,
+      td {
+        border: 1px solid #cc3366;
+        padding: 10px;
+        text-align: center;
+        user-select: none;
+        transition: background-color 0.2s;
+      }
+      th {
+        background: #cc3366;
+        color: white;
+      }
+      tbody tr:hover td {
+        background-color: #ffd1e6;
+      }
+      footer {
+        text-align: center;
+        padding: 10px;
+        background: #cc3366;
+        color: white;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        margin-top: 40px;
+      }
+      /* Responsive styling */
+      @media (max-width: 600px) {
+        nav.schedule-nav ul {
+          flex-direction: column;
+          width: 100%;
+        }
+        nav.schedule-nav ul li button {
+          padding: 10px 0;
+          width: 100%;
+          font-size: 1em;
+        }
+        table,
+        thead,
+        tbody,
+        th,
+        td,
+        tr {
+          display: block;
+        }
+        thead tr {
+          position: absolute;
+          top: -9999px;
+          left: -9999px;
+        }
+        tr {
+          border: 1px solid #cc3366;
+          border-radius: 8px;
+          margin-bottom: 15px;
+          padding: 10px;
+        }
+        td {
+          border: none;
+          padding-left: 50%;
+          text-align: left;
+          position: relative;
+          font-size: 1em;
+        }
+        td::before {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          font-weight: bold;
+          color: #990050;
+          white-space: nowrap;
+          width: 45%;
+        }
+        td:nth-of-type(1)::before {
+          content: "День недели";
+        }
+        td:nth-of-type(2)::before {
+          content: "1 урок";
+        }
+        td:nth-of-type(3)::before {
+          content: "2 урок";
+        }
+        td:nth-of-type(4)::before {
+          content: "3 урок";
+        }
+        td:nth-of-type(5)::before {
+          content: "4 урок";
+        }
+        td:nth-of-type(6)::before {
+          content: "5 урок";
+        }
+        td:nth-of-type(7)::before {
+          content: "6 урок";
+        }
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -17,7 +203,7 @@
           <li><a href="dashboard.html">Мини-игры</a></li>
           <li><a href="registration.html">Онлайн-опросы</a></li>
           <li><a href="quiz.html">Тест</a></li>
-          <li><a href="классы.html">Классы</a></li>
+          <li><a href="class.html">Классы</a></li>
         </ul>
       </nav>
     </header>
@@ -25,7 +211,7 @@
     <main>
       <h2>Классы</h2>
       <p>Выберите класс для получения дополнительной информации:</p>
-      <ul>
+      <ul class="class-list">
         <li><a href="class5.html">5 класс</a></li>
         <li><a href="class6.html">6 класс</a></li>
         <li><a href="class7.html">7 класс</a></li>
@@ -34,10 +220,247 @@
         <li><a href="class10.html">10 класс</a></li>
         <li><a href="class11.html">11 класс</a></li>
       </ul>
+
+      <h2>Расписание уроков</h2>
+      <nav class="schedule-nav" aria-label="Выбор класса для расписания">
+        <ul>
+          <li>
+            <button
+              id="btn5"
+              class="active"
+              aria-pressed="true"
+              aria-controls="schedule5"
+              onclick="showSchedule(5)"
+            >
+              5 класс
+            </button>
+          </li>
+          <li>
+            <button
+              id="btn6"
+              aria-pressed="false"
+              aria-controls="schedule6"
+              onclick="showSchedule(6)"
+            >
+              6 класс
+            </button>
+          </li>
+          <li>
+            <button
+              id="btn7"
+              aria-pressed="false"
+              aria-controls="schedule7"
+              onclick="showSchedule(7)"
+            >
+              7 класс
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <section id="schedule5" class="schedule-section active">
+        <h3>Расписание 5 класса</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>День недели</th>
+              <th>1 урок</th>
+              <th>2 урок</th>
+              <th>3 урок</th>
+              <th>4 урок</th>
+              <th>5 урок</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Понедельник</td>
+              <td>Математика</td>
+              <td>Русский язык</td>
+              <td>Окружающий мир</td>
+              <td>Физкультура</td>
+              <td>ИЗО</td>
+            </tr>
+            <tr>
+              <td>Вторник</td>
+              <td>Русский язык</td>
+              <td>Чтение</td>
+              <td>Математика</td>
+              <td>Музыка</td>
+              <td>Технология</td>
+            </tr>
+            <tr>
+              <td>Среда</td>
+              <td>Окружающий мир</td>
+              <td>Литература</td>
+              <td>Математика</td>
+              <td>Физкультура</td>
+              <td>Иностранный язык</td>
+            </tr>
+            <tr>
+              <td>Четверг</td>
+              <td>Русский язык</td>
+              <td>Математика</td>
+              <td>Иностранный язык</td>
+              <td>Технология</td>
+              <td>Музыка</td>
+            </tr>
+            <tr>
+              <td>Пятница</td>
+              <td>Литература</td>
+              <td>Окружающий мир</td>
+              <td>Русский язык</td>
+              <td>Физкультура</td>
+              <td>Технология</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="schedule6" class="schedule-section">
+        <h3>Расписание 6 класса</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>День недели</th>
+              <th>1 урок</th>
+              <th>2 урок</th>
+              <th>3 урок</th>
+              <th>4 урок</th>
+              <th>5 урок</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Понедельник</td>
+              <td>Математика</td>
+              <td>Русский язык</td>
+              <td>Обществознание</td>
+              <td>Физкультура</td>
+              <td>История</td>
+            </tr>
+            <tr>
+              <td>Вторник</td>
+              <td>Русский язык</td>
+              <td>Биология</td>
+              <td>Математика</td>
+              <td>Физика</td>
+              <td>Музыка</td>
+            </tr>
+            <tr>
+              <td>Среда</td>
+              <td>Литература</td>
+              <td>Химия</td>
+              <td>Математика</td>
+              <td>Физкультура</td>
+              <td>Иностранный язык</td>
+            </tr>
+            <tr>
+              <td>Четверг</td>
+              <td>Русский язык</td>
+              <td>Математика</td>
+              <td>География</td>
+              <td>Технология</td>
+              <td>Экология</td>
+            </tr>
+            <tr>
+              <td>Пятница</td>
+              <td>Литература</td>
+              <td>Обществознание</td>
+              <td>Русский язык</td>
+              <td>Физика</td>
+              <td>Технология</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="schedule7" class="schedule-section">
+        <h3>Расписание 7 класса</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>День недели</th>
+              <th>1 урок</th>
+              <th>2 урок</th>
+              <th>3 урок</th>
+              <th>4 урок</th>
+              <th>5 урок</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Понедельник</td>
+              <td>Алгебра</td>
+              <td>Русский язык</td>
+              <td>Физкультура</td>
+              <td>История</td>
+              <td>Информатика</td>
+            </tr>
+            <tr>
+              <td>Вторник</td>
+              <td>Геометрия</td>
+              <td>Биология</td>
+              <td>Физика</td>
+              <td>Литература</td>
+              <td>Музыка</td>
+            </tr>
+            <tr>
+              <td>Среда</td>
+              <td>Русский язык</td>
+              <td>Химия</td>
+              <td>Математика</td>
+              <td>Физкультура</td>
+              <td>Обществознание</td>
+            </tr>
+            <tr>
+              <td>Четверг</td>
+              <td>Английский язык</td>
+              <td>Информатика</td>
+              <td>География</td>
+              <td>Технология</td>
+              <td>История</td>
+            </tr>
+            <tr>
+              <td>Пятница</td>
+              <td>Литература</td>
+              <td>Алгебра</td>
+              <td>Русский язык</td>
+              <td>Физика</td>
+              <td>Иностранный язык</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
     </main>
 
     <footer>
       <p>&copy; МОБУ СОШ №16</p>
     </footer>
+
+    <script>
+      function showSchedule(classNum) {
+        document.querySelectorAll(".schedule-section").forEach((section) => {
+          section.classList.remove("active");
+        });
+        document.getElementById("schedule" + classNum).classList.add("active");
+
+        ["btn5", "btn6", "btn7"].forEach((id) => {
+          const btn = document.getElementById(id);
+          if (btn.id === "btn" + classNum) {
+            btn.classList.add("active");
+            btn.setAttribute("aria-pressed", "true");
+            btn.focus();
+          } else {
+            btn.classList.remove("active");
+            btn.setAttribute("aria-pressed", "false");
+          }
+        });
+      }
+
+      // Инициализация при загрузке страницы
+      document.addEventListener("DOMContentLoaded", () => {
+        showSchedule(5);
+      });
+    </script>
   </body>
 </html>
